@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <script src="http://cdn.livefyre.com/libs/sdk/v2.11.5/streamhub-sdk.min.js"></script>
+    <link rel="stylesheet" href="http://cdn.livefyre.com/libs/sdk/v2.11.5/streamhub-sdk.min.css" />
+        
+    <script src="http://cdn.livefyre.com/libs/apps/Livefyre/streamhub-wall/v2.6.1-build.257/streamhub-wall.min.js"></script>
+            
+</head>
+<body>
+    
+    <div id='wall-0'></div>
+    <script>
+        (function () {
+            var Collection = Livefyre.require("streamhub-sdk/collection");
+            var WallView = Livefyre.require("streamhub-wall");
+
+            
+            var opt0 = {
+                network: 'strategy-prod.fyre.co',
+                siteId: '340628',
+                articleId: 'custom-1395010000184'
+            };
+        
+            var wallView0 = new WallView({
+                initial: 50,
+                showMore: 50,
+                el: document.getElementById("wall-0")
+            });
+        
+            var collection0 = new Collection(opt0);
+            collection0.on("error", function (err) {
+                if (console) {
+                    console.log("Error just occurred: " + err);
+                }
+            });
+            collection0.pipe(wallView0);
+        
+        })();
+    </script>
+        
+</body>
+</html>
+        
