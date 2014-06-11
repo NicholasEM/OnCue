@@ -258,7 +258,7 @@ function (Collection, ListView)
             //reload carousel (seconds)
             if(kv[0] == "rs"){
                 var ref_time = kv[1] * 1000;
-                // if(ref_time <= 500) ref_time = 500;
+                if(ref_time <= 500) ref_time = 500;
                 setTimeout(function() {var cur = location.href; location.href = cur;}, ref_time)
 }
 
