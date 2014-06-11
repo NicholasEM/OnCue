@@ -11,6 +11,9 @@ var SLIDE_CONFIG = {
     // The number of rotations before the carousel reloads
     reloadCycle: 0,
 
+    //Number of seconds before automatic refresh
+    rereshTime: 0,
+
     // Collections info
     listFeed1: {
         network: "reveredigital.fyre.co",

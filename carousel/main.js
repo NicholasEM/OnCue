@@ -109,6 +109,10 @@ function (Collection, ListView)
             interval: false,
             pause: ""
         });
+        if(this._config["refreshTime"] > 0) {
+            if(this._config["refreshTime"] <= 300) this._config["refreshTime"] = 300;
+            setTimeout(function() {location.reload()}, this._config["refreshTime"]*1000);
+        }
         $carousel.trigger(this.endSlideTransitionEvent);
     };
 
@@ -167,7 +171,7 @@ function (Collection, ListView)
             if (slideDuration) {
                 slideDuration = parseInt(slideDuration, 10);
             } else {
-                slideDuration = this.config.carouselInterval;
+                slideDuration = this._config["carouselInterval"];
             }
             this._timeoutId = setTimeout(function () {
                 if (! self.isPaused()) {
@@ -247,22 +251,20 @@ function (Collection, ListView)
 
             // Carousel Interval
             if (kv[0] == "ci") {
-                this._config.set("carouselInterval", kv[1]);
+                this._config["carouselInterval"] = kv[1];
             }
 
             // Feed Interval
             if (kv[0] == "fi") {
-                this._config.set("feedScrollerInterval", kv[1]);
+                this._config["feedScrollerInterval"] = kv[1];
             }
 
-            //reload carousel (seconds)
+            // Reload Carousel (Seconds)
             if(kv[0] == "rs"){
-                var ref_time = kv[1] * 1000;
-                if(ref_time <= 500) ref_time = 500;
-                setTimeout(function() {var cur = location.href; location.href = cur;}, ref_time)
-}
+                this._config["refreshTime"] = kv[1];
+            }
 
-            // Reload Carousel (cycles)
+            // Reload Carousel (Cycles)
             if (kv[0] == "rc") {
                 this._config["reloadCycle"] = kv[1];
             }
