@@ -17,8 +17,6 @@
         <link rel="stylesheet" href="fonts/futura/futura.css" />
         <link rel="stylesheet" href="fonts/tradegothic/trade.css" />
         <link rel="stylesheet" href="main.css" />
-
-        <meta http-equiv="refresh" content="15" />
     </head>
     <body>
         <img class="bg-img" src="imgs/bg.png" />
@@ -49,8 +47,28 @@
             </div>
         </div>
 
-
         <script src="config.js"></script>
         <script src="main.js"></script>
+
+        <script>
+            var results = location.search;
+            var res_ar = results.split("&");
+            var res_ar2;
+            var isRefresh = false;
+            for (var i = 0; i <= res_ar.length-1; i++) 
+            {
+                res_ar2 = res_ar[i].split("=");
+                    if(res_ar2[0].indexOf("refresh") != -1)
+                    {
+                        isRefresh = true;
+                        break;
+                    }
+            }
+
+        if(isRefresh){
+            var ref_time = res_ar2[1] * 1000;
+            setTimeout(function() {var cur = location.href; location.href = cur;}, ref_time)
+        }
+    </script>
     </body>
 </html>
