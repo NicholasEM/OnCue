@@ -9,7 +9,7 @@
         initStages();
         initCircles();
         animate();
-        addListeners();
+        // addListeners();
     }
 
     // Init Canvas

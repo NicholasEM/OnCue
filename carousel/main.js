@@ -176,7 +176,7 @@ function (Collection, ListView)
             }, slideDuration);
 
             if (self._config.reloadCycle > 0) {
-                if ((self._config.reloadCycle * self.numSlides) == ++self.slideCounter) {
+                if ((self._config.reloadCycle * self.numSlides) + 1 == ++self.slideCounter) {
                     self._firstRun = false;
                     self.slideCounter = 0;
                     location.reload();
@@ -255,9 +255,16 @@ function (Collection, ListView)
                 this._config.set("feedScrollerInterval", kv[1]);
             }
 
-            // Reload Carousel
+            //reload carousel (seconds)
+            if(kv[0] == "rs"){
+                var ref_time = kv[1] * 1000;
+                // if(ref_time <= 500) ref_time = 500;
+                setTimeout(function() {var cur = location.href; location.href = cur;}, ref_time)
+}
+
+            // Reload Carousel (cycles)
             if (kv[0] == "rc") {
-                this._config.set("reloadCycle", kv[1]);
+                this._config["reloadCycle"] = kv[1];
             }
         }
     };
