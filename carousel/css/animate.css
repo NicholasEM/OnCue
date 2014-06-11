@@ -39,13 +39,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 
-.animated, .carousel .active.left, .content-source-logo{
+.animated, .carousel .active.left{
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
-.animated2, .content-author-name, .content-author-avatar{
+.animated2, .content-author-name, .content-author-avatar, .content-source-logo{
 	-webkit-animation-duration: 2s;
 	animation-duration: 2s;
 	-webkit-animation-fill-mode: both;
@@ -94,10 +94,83 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   animation-duration: 2s;
 }
 
-.bigscaler, .content-source-logo{
+.bigscaler{
   -webkit-animation-name: bigscaler;
   animation-name: bigscaler;
 }
+
+
+
+
+.ocl_01{
+	-webkit-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_02{
+	-webkit-animation-duration: 6s;
+	animation-duration: 6s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_03{
+	-webkit-animation-duration: 4s;
+	animation-duration: 4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_04{
+	-webkit-animation-duration: 7s;
+	animation-duration: 7s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.fader{
+  -webkit-animation-name: fader;
+  animation-name: fader;
+  
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  
+}
+@-webkit-keyframes fader {
+  0% {
+    opacity: 0;
+  }
+  
+  50%{
+  	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fader {
+	0% {
+	  opacity: 0;
+	}
+	
+	50%{
+		opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+}
+
+
 @-webkit-keyframes bigscaler {
   0% {
     -webkit-transform: scale3d(0,0,0);
@@ -1214,7 +1287,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.fadeInLeft {
+.fadeInLeft, .content-source-logo {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
