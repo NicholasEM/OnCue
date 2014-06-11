@@ -109,6 +109,10 @@ function (Collection, ListView)
             interval: false,
             pause: ""
         });
+        if(this._config["refreshTime"] > 0) {
+            if(this._config["refreshTime"] <= 300) this._config["refreshTime"] = 300;
+            setTimeout(function() {location.reload()}, this._config["refreshTime"]*1000);
+        }
         $carousel.trigger(this.endSlideTransitionEvent);
     };
 
@@ -167,7 +171,7 @@ function (Collection, ListView)
             if (slideDuration) {
                 slideDuration = parseInt(slideDuration, 10);
             } else {
-                slideDuration = this.config.carouselInterval;
+                slideDuration = this._config["carouselInterval"];
             }
             this._timeoutId = setTimeout(function () {
                 if (! self.isPaused()) {
@@ -176,7 +180,7 @@ function (Collection, ListView)
             }, slideDuration);
 
             if (self._config.reloadCycle > 0) {
-                if ((self._config.reloadCycle * self.numSlides) == ++self.slideCounter) {
+                if ((self._config.reloadCycle * self.numSlides) + 1 == ++self.slideCounter) {
                     self._firstRun = false;
                     self.slideCounter = 0;
                     location.reload();
@@ -247,17 +251,22 @@ function (Collection, ListView)
 
             // Carousel Interval
             if (kv[0] == "ci") {
-                this._config.set("carouselInterval", kv[1]);
+                this._config["carouselInterval"] = kv[1];
             }
 
             // Feed Interval
             if (kv[0] == "fi") {
-                this._config.set("feedScrollerInterval", kv[1]);
+                this._config["feedScrollerInterval"] = kv[1];
             }
 
-            // Reload Carousel
+            // Reload Carousel (Seconds)
+            if(kv[0] == "rs"){
+                this._config["refreshTime"] = kv[1];
+            }
+
+            // Reload Carousel (Cycles)
             if (kv[0] == "rc") {
-                this._config.set("reloadCycle", kv[1]);
+                this._config["reloadCycle"] = kv[1];
             }
         }
     };

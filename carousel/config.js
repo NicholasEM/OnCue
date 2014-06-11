@@ -11,34 +11,25 @@ var SLIDE_CONFIG = {
     // The number of rotations before the carousel reloads
     reloadCycle: 0,
 
+    //Number of seconds before automatic refresh
+    rereshTime: 0,
+
     // Collections info
-    counterWall: {
-        network: "strategy-prod.fyre.co",
-        siteId: "340628",
-        articleId: "custom-1395010000184"
-    },
     listFeed1: {
-        network: "strategy-prod.fyre.co",
-        siteId: "340628",
-        articleId: 'custom-1395009388264',
+        network: "reveredigital.fyre.co",
+        siteId: "350333",
+        articleId: 'custom-1400543277205',
         initial: 10,
         showMore: 0
     },
-    map: {
-        network: "strategy-prod.fyre.co",
-        siteId: "340628",
-        articleId: "custom-1395009388264",
-        cloudmadeStyleId: 56565,
-        leafletMapOptions: {
-            center: [37.7825471,-122.3978904],
-            styles: 'dark',
-            zoom: 18
-        }
-    },
-    get: function (key) {
-         return this[key];
-    },
-    set: function (key, value) {
-        this[key] = value;
-    }
+
+
+//listFeed1: {
+//    network: "strategy-prod.fyre.co",
+//    siteId: "340628",
+//    articleId: 'custom-1395009388264',
+//    initial: 10,
+//    showMore: 0
+//},
+
 };

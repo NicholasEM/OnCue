@@ -18,22 +18,48 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 /*HAGGOTRONCODE 8800*/
 
 
-.animated {
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+.carousel .item {
+    -webkit-transition: opacity 1s;
+    -moz-transition: opacity 1s;
+    -ms-transition: opacity 1s;
+    -o-transition: opacity 1s;
+    transition: opacity 1s;
+}
+.carousel .active.left, .carousel .active.right {
+    left:0;
+    opacity:0;
+    z-index:2;
+
+}
+.carousel .next, .carousel .prev {
+    left:0;
+    opacity:1;
+    z-index:1;
 }
 
 
-.animated18{
-	-webkit-animation-duration: 1.8s;
-	animation-duration: 1.8s;
+
+.animated, .carousel .active.left{
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.animated2, .content-author-name, .content-author-avatar, .content-source-logo{
+	-webkit-animation-duration: 2s;
+	animation-duration: 2s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
 
-.animated3{
+.animated22, .content-author-username{
+	-webkit-animation-duration: 2.2s;
+	animation-duration: 2.2s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.animated3, .content-body{
 	-webkit-animation-duration: 3s;
 	animation-duration: 3s;
 	-webkit-animation-fill-mode: both;
@@ -41,9 +67,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 
-.animated5{
-	-webkit-animation-duration: 5s;
-	animation-duration: 5s;
+.animated4{
+	-webkit-animation-duration: 4s;
+	animation-duration: 4s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
 }
@@ -67,6 +93,176 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   -webkit-animation-duration: 2s;
   animation-duration: 2s;
 }
+
+.bigscaler{
+  -webkit-animation-name: bigscaler;
+  animation-name: bigscaler;
+}
+
+
+
+
+.ocl_01{
+	-webkit-animation-duration: 5s;
+	animation-duration: 5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_02{
+	-webkit-animation-duration: 6s;
+	animation-duration: 6s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_03{
+	-webkit-animation-duration: 4s;
+	animation-duration: 4s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.ocl_04{
+	-webkit-animation-duration: 7s;
+	animation-duration: 7s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
+.fader{
+  -webkit-animation-name: fader;
+  animation-name: fader;
+  
+  -webkit-animation-direction: alternate;
+  animation-direction: alternate;
+  
+  -webkit-animation-iteration-count: infinite;
+  animation-iteration-count: infinite;
+  
+  -webkit-animation-timing-function: ease-in-out;
+  animation-timing-function: ease-in-out;
+  
+}
+@-webkit-keyframes fader {
+  0% {
+    opacity: 0;
+  }
+  
+  50%{
+  	opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes fader {
+	0% {
+	  opacity: 0;
+	}
+	
+	50%{
+		opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+}
+
+
+@-webkit-keyframes bigscaler {
+  0% {
+    -webkit-transform: scale3d(0,0,0);
+    opacity: 0;
+  }
+  
+  70%{
+  	opacity: 0;
+  }
+  
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1,1,1);
+  }
+}
+
+@keyframes bigscaler {
+  0% {
+    transform: scale3d(0,0,0);
+    opacity: 0;
+  }
+  
+  70%{
+  	opacity: 0;
+  }
+  
+  100% {
+  	opacity: 1;
+    transform: scale3d(1,1,1);
+  }
+}
+
+.scaler{
+  -webkit-animation-name: scaler;
+  animation-name: scaler;
+}
+@-webkit-keyframes scaler {
+  0% {
+    -webkit-transform: scale3d(1,1,1);
+  }
+  
+  100% {
+    -webkit-transform: scale3d(1.1,1.1,1.1);
+  }
+}
+
+@keyframes scaler {
+  0% {
+    transform: scale3d(1,1,1);
+  }
+  
+  100% {
+    transform: scale3d(1.1,1.1,1.1);
+  }
+}
+
+.reversescaler, .carousel .active.left{
+  -webkit-animation-name: reversescaler;
+  animation-name: reversescaler;
+  
+  -webkit-animation-timing-function: ease-in;
+  animation-timing-function: ease-in;
+}
+@-webkit-keyframes reversescaler {
+  0% {
+    transform: scale3d(1,1,1);
+    opacity: 1;
+  }
+  
+  50%{
+  	opacity: 0;
+  }
+  100% {
+    -webkit-transform: scale3d(.4,.4,.4);
+  }
+}
+
+@keyframes reversescaler {
+  0% {
+    transform: scale3d(1,1,1);
+    opacity: 1;
+  }
+  
+  50%{
+  	opacity: 0;
+  }
+  
+  100% {
+    transform: scale3d(.4,.4,.4);
+  }
+}
+
 
 @-webkit-keyframes bounce {
   0%, 20%, 50%, 80%, 100% {
@@ -1091,7 +1287,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.fadeInLeft {
+.fadeInLeft, .content-source-logo {
   -webkit-animation-name: fadeInLeft;
   animation-name: fadeInLeft;
 }
@@ -1134,8 +1330,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @-webkit-keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(20px);
-    transform: translateX(20px);
+    -webkit-transform: translateX(100px);
+    transform: translateX(100px);
   }
 
   100% {
@@ -1148,9 +1344,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @keyframes fadeInRight {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(20px);
-    -ms-transform: translateX(20px);
-    transform: translateX(20px);
+    -webkit-transform: translateX(100px);
+    -ms-transform: translateX(100px);
+    transform: translateX(100px);
   }
 
   100% {
@@ -1161,9 +1357,54 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.fadeInRight {
+.fadeInRight, .content-body, .content-author-name, .content-author-avatar, .content-attachments, .content-author-username {
   -webkit-animation-name: fadeInRight;
   animation-name: fadeInRight;
+}
+
+
+@-webkit-keyframes fadeInRighter {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(70px);
+    transform: translateX(70px);
+  }
+	
+  70%{
+	opacity: 0;
+  }
+	
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRighter {
+  0% {
+    opacity: 0;
+    
+  }
+  
+  10%{
+  	opacity: 0;
+  	-webkit-transform: translateX(70px);
+  	-ms-transform: translateX(70px);
+  	transform: translateX(70px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+}
+
+.fadeInRighter {
+  -webkit-animation-name: fadeInRighter;
+  animation-name: fadeInRighter;
 }
 
 @-webkit-keyframes fadeInRightBig {
