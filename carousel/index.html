@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+    	        <link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
+    	
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 
         <!-- Streamhub (Have to use 2.5.2 for maps) -->
@@ -14,61 +16,48 @@
         <!-- End Bootstrap 3 -->
 
         <link rel="stylesheet" href="css/animate.css" />
-        <link rel="stylesheet" href="fonts/futura/futura.css" />
-        <link rel="stylesheet" href="fonts/tradegothic/trade.css" />
-        <link rel="stylesheet" href="main.css" />
+        <link rel="stylesheet" href="css/main.css" />
     </head>
     <body>
-        <img class="bg-img" src="imgs/bg.png" />
+    
+    <canvas id="text" width="500" height="0"></canvas>
+    <canvas id="stage" width="500" height="100"></canvas>
+    <form id="form">
+    </form>
+    
+
+    
         <div id="carousel" class="carousel slide">
             <!-- Slides -->
             <div class="carousel-inner">                
-                <div class="active item avatar-wall-container" data-slide-duration="5000">
+                <div class="active item avatar-wall-container" data-slide-duration="8000">
                     <div class="slate">
-                        <div class="slate-content">
+                        <div class="animated bigscaler slate-content">
                             <!-- <h1 class="hero-text">Welcome Home, Livefyre!</h1> -->
-                            <img class="hero-image" src="imgs/Welcome_Home.png" />
+                            <img src="imgs/oncuebiglogo.png" />
                         </div>
                     </div>
                 </div>
-                <div class="item lf-feed-1" data-slide-duration="5000">
-                    <div class="feed-container">
+                <div class="item lf-feed-1" data-slide-duration="8000">
+                    <div class="feed-container animated2 bigscaler">
                         <div id="feed1"></div>
                     </div>
                 </div>
-                <div class="item avatar-wall-container" data-slide-duration="5000">
+                <div class="  item avatar-wall-container" data-slide-duration="8000">
                     <div class="slate">
                         <div class="slate-content">
                             <!-- <h1 class="hero-text">Welcome Home, Livefyre!</h1> -->
-                            <img class="hero-image" src="imgs/Welcome_Home.png" />
+                            <img class="poweredby animated2 fadeInRighter" src="imgs/poweredby.png" />
+                            <img class="livefyre animated22 fadeInRighter" src="imgs/livefyre.png" alt="" />
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
+		<script src="js/plugins.js"></script>
+		<script src="js/main.js"></script>
         <script src="config.js"></script>
         <script src="main.js"></script>
-
-        <script>
-            var results = location.search;
-            var res_ar = results.split("&");
-            var res_ar2;
-            var isRefresh = false;
-            for (var i = 0; i <= res_ar.length-1; i++) 
-            {
-                res_ar2 = res_ar[i].split("=");
-                    if(res_ar2[0].indexOf("refresh") != -1)
-                    {
-                        isRefresh = true;
-                        break;
-                    }
-            }
-
-        if(isRefresh){
-            var ref_time = res_ar2[1] * 1000;
-            setTimeout(function() {var cur = location.href; location.href = cur;}, ref_time)
-        }
-    </script>
     </body>
 </html>
