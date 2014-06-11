@@ -259,6 +259,7 @@ body {
     width: 1100px;
     font-size: 72px;
     line-height: 84px;
+    padding-bottom: 5px;
 }
 #feed1 .content-with-image .content-actions,
 #feed1 .hub-content-image-loading .content-actions,
@@ -323,8 +324,28 @@ body {
 }
 
 #stage{
-	width: 1920px;
-	height: 1080px;
 	position: relative;
 	left: -3px;
+	width: 1920px;
+}
+
+.content.content-with-image.content-instagram .content-source-logo{
+	background:  url('../imgs/instaicon.png') no-repeat left top;
+	width: 38px;
+	height: 38px;
+	position: relative;
+	top: 10px;
+}
+
+.biglogoanim{
+	width: 1151px;
+	height: 846px;
+	margin: 0 auto;
+	position: relative;
+}
+
+.ocl_01, .ocl_02, .ocl_03, .ocl_04, .ocl_text{
+	position: absolute;
+	top: 0;
+	left: 0;
 }
