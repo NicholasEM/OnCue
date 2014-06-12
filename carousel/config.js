@@ -16,9 +16,9 @@ var SLIDE_CONFIG = {
 
     // Collections info
     listFeed1: {
-        network: "reveredigital.fyre.co",
-        siteId: "350333",
-        articleId: 'custom-1400543277205',
+        network: "strategy-prod.fyre.co",
+        siteId: "340628",
+        articleId: 'custom-1402373822993',
         initial: 10,
         showMore: 0
     },

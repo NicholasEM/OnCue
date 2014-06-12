@@ -327,10 +327,6 @@ body {
 	position: absolute;
 }
 
-.content.content-with-image.content-instagram .content-source-logo{
-	background-position: -46px 0;
-}
-
 #stage{
 	width: 1920px;
 	height: 1080px;
@@ -350,7 +346,6 @@ body {
 	padding: 0 40px;
 	position: relative;
 	z-index: 999;
-	background: rgba(255,255,255,.95);
 }
 .header img{
 	width: 100%;
