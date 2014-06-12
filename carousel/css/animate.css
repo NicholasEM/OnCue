@@ -66,6 +66,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 	animation-fill-mode: both;
 }
 
+.animated33{
+	-webkit-animation-duration: 3.3s;
+	animation-duration: 3.3s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+
 
 .animated4{
 	-webkit-animation-duration: 4s;
@@ -1366,8 +1373,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 @-webkit-keyframes fadeInRighter {
   0% {
     opacity: 0;
-    -webkit-transform: translateX(70px);
-    transform: translateX(70px);
+    -webkit-transform: translateX(200px);
+    transform: translateX(200px);
   }
 	
   70%{
