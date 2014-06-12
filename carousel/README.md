@@ -11,7 +11,7 @@ The customizable paramaters are rs=x, rc=x, fi=x, and ci=x
 
 **fi=x**: The time (in milliseconds) between tweets fading in and out
 
-**ci=x**: The time (in milliseconds) between slide shifts - however if there is a hard-coded slide duration (slideDuration variable in main.js) that number will take precedence.  The code does currently have a hard-coded duration of ---
+**ci=x**: The time (in milliseconds) between slide shifts - however if there is a hard-coded slide duration (slideDuration variable in main.js) that number will take precedence.  The code does currently have a hard-coded duration of 10 seconds.
 
 ####Examples
 **Base URL:** http://url.com/example/things/
